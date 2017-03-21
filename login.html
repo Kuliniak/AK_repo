@@ -11,10 +11,10 @@
 	echo '<pre>';
 		if( isset($_GET['error']) ){
 			switch($_GET['error']){
-				case 0: echo 'Zaloguj siê do systemu'; break;
-				case 1: echo 'Proszê wype³niæ wszystkie pola!'; break;
-				case 2: echo 'U¿ytkownik nie istnieje!'; break;
-				case 3: echo 'Podane has³o jest nieprawid³owo!'; break;
+				case 0: echo 'Zaloguj siÃª do systemu'; break;
+				case 1: echo 'ProszÃª wypeÂ³niÃ¦ wszystkie pola!'; break;
+				case 2: echo 'UÂ¿ytkownik nie istnieje!'; break;
+				case 3: echo 'Podane hasÂ³o jest nieprawidÂ³owo!'; break;
 			}
 		}
 	echo '</pre>';
@@ -25,30 +25,30 @@
 		</div>
 		<div id="menu_gorne">
 			<ul>
-				<li><a href="#">Strona g³ówna</a></li>
+				<li><a href="#">Strona gÂ³Ã³wna</a></li>
 				<li><a href="#">O projekcie</a></li>
-				<li><a href="#">O tworz¹cych projekt</a></li>
+				<li><a href="#">O tworzÂ¹cych projekt</a></li>
 			</ul>
 			<div class="clear"></div>
 		</div>
 		<div id="menu_lewe">
-			<h3>Panel u¿ytkownika</h3>
+			<h3>Panel uÂ¿ytkownika</h3>
 					<ul>
 				<li><a href="#">Logowanie</a></li>
 				<li><a href="#">Rejestracja</a></li>
 			</ul>
 		</div>
 		<div id="tresc">
-			<h3>Zaloguj siê</h3>
-			<p>Wype³nij poni¿sze pola, by siê zalogowaæ do panelu</p>
+			<h3>Zaloguj siÃª</h3>
+			<p>WypeÂ³nij poniÂ¿sze pola, by siÃª zalogowaÃ¦ do panelu</p>
 			<form action="logowanie.php" method="post"
 				<input type="login" placeholder="Login" autofocus />
-				<input type="haslo" placeholder="Has³o" />
+				<input type="haslo" placeholder="HasÂ³o" />
 				<div class="remember">
 					<input name="checky" id="checky" value="1" type="checkbox" />
-					<label class="terms"=>Zapamiêtaj mnie</label>
+					<label class="terms"=>ZapamiÃªtaj mnie</label>
 				</div>
-				<input type="submit" value="Zaloguj siê" name="log_in"/>
+				<input type="submit" value="Zaloguj siÃª" name="log_in"/>
 			</form>
 			</div>
 		</div>
