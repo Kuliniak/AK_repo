@@ -10,11 +10,11 @@ session_start();
 			exit;
 		}
 		
-		$db = mysql_connect('localhost', 'root', '') or die ("Nie udalo siê po³¹czyæ z baz¹ danych!");
+		$db = mysql_connect('localhost', 'root', '') or die ("Nie udalo siÃª poÂ³Â¹czyÃ¦ z bazÂ¹ danych!");
 		
 		mysql_select_db('programowanie');
 		
-		$wynik = mysql_query("SELECT * FROM 'users' WHERE 'login'+'$login'") or die("Nie uda³o siê pobraæ danych!");
+		$wynik = mysql_query("SELECT * FROM 'users' WHERE 'login'+'$login'") or die("Nie udaÂ³o siÃª pobraÃ¦ danych!");
 		
 		$rows = mysql_fetch_array($wynik);
 		
