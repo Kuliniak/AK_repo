@@ -1,0 +1,200 @@
+div#glowny
+{
+font-size:24px;
+        min-width:600px;
+        max-width:1800px;
+
+}
+
+div#naglowek
+{
+background-color:gold;
+        text-align:center;
+
+}
+#menu {
+display:table-cell;
+        width:1600;
+        margin:0 auto;
+        padding:0;
+        list-style-type:none;
+        background-color:#FDF;
+		
+		
+      }
+
+      /* naprawa wysokoœci elementu - ol */
+      #menu:after {
+        content:'';
+        display:block;
+        clear:both;
+      }
+
+      /* wygl¹d elementów - li */
+      #menu > li {
+        float:left;
+      }
+
+      /* pierwszy element - li - elementu o identyfikatorze menu */
+      #menu > li:first-child {
+        background-color:red;
+        width:30%;
+      }
+
+      /* drugi element - li - elementu o identyfikatorze menu */
+      #menu > li:first-child + li {
+        background-color:green;
+        width:40%;
+      }
+
+      /* trzeci element - li - elementu o identyfikatorze menu */
+      #menu > li:first-child + li + li {
+        background-color:blue;
+        width:30%;
+      }
+
+      /* wygl¹d elementów - a */
+      #menu > li > a {
+        display:block;
+        padding:15px;
+        text-decoration:none;
+        text-align:center;
+        color:#000;
+        background-color:#DDD;
+        box-shadow:0 0 0 1px #FFF inset;
+        background-image:linear-gradient(#FFF 0%, #EEE 30%, #DDD 70%, #FFF 100%);
+      }
+
+      /* wygl¹d elementów - a - po najechaniu kursorem myszki na element - li */
+      #menu > li:hover > a {
+        color:#00F;
+        background-color:#FFF;
+        background-image:none;
+      }
+
+      /* -------------------- ROZWIJANA CZÊŒÆ MENU CSS -------------------- */
+      /* wygl¹d elementów - li - rodzica ka¿dej czêœci rozwijanej menu CSS */
+      #menu > li {
+        position:relative;
+      }
+
+      /* wygl¹d elementów - ul */
+      #menu > li > ul {
+        width:100%;
+        display:none;
+        position:absolute;
+        z-index:1;
+        margin:0;
+        padding:0;
+        list-style-type:none;
+        background-color:#FFF;
+      }
+
+      /* wygl¹d elementów - ul - po najechaniu kursorem myszki na element - li */
+      #menu > li:hover > ul {
+        display:block;
+      }
+
+      /* wygl¹d elementów - li */
+      #menu > li > ul > li {
+        box-shadow:0 -4px 4px -4px #AAA;
+      }
+
+      /* wygl¹d pierwszego dziecka elementu typu - li */
+      #menu > li > ul > li:first-child {
+        box-shadow:none;
+      }
+
+      /* wygl¹d ostatniego dziecka elementu typu - li */
+      #menu > li > ul > li:last-child {
+        box-shadow:0 -4px 4px -4px #AAA, 0 4px 4px -4px #AAA;
+      }
+
+      /* wygl¹d elementów - a */
+      #menu > li > ul > li > a {
+        display:block;
+        text-decoration:none;
+        padding:15px;
+        color:#000;
+      }
+
+      /* wygl¹d elementów - a - po najechaniu kursorem myszki na element - li */
+      #menu > li > ul > li:hover > a {
+        color:#00F; 
+        background-color:#F0F0F0;
+        background-image:linear-gradient(#FFF, #EEE, #FFF);
+      }
+
+div#menu_lewe
+{
+
+float: left;
+width: 195px;
+
+margin: 5px 5px 5px 0px;
+padding: 0px;
+
+}
+
+div#menu_lewe ul
+{
+list-style-type: none;
+display: block;
+margin: 0;
+padding: 0;
+}
+
+div#menu_lewe ul li
+{
+float: left;
+width: 195px;
+}
+
+div#menu_lewe ul li a
+{
+display: block;
+background: #7aa;
+height: 30px;
+line-height: 30px;
+font-size: 12pt;
+margin: 1px 1px 1px 1px;
+padding-left: 10px;
+}
+
+div#menu_lewe ul a:hover
+{
+color: #000;
+background: #ccc;
+transition-duration: 1s;
+}
+a:visited, a:link
+{
+color: #fff; 
+text-decoration: none; 
+}
+
+
+
+
+div#tresc
+{
+float: left;
+width: 520px;
+min-height: 350px;
+background: #778899;
+color: #ffffff;
+
+}
+
+div#stopka
+{
+clear: both;
+
+background-color:gold;
+
+        text-align:center;
+}
+p {
+        margin:0;
+        padding:35px;
+      }
