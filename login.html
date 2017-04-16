@@ -6,19 +6,6 @@
 </head>
 <body>
 <div id="kontener">
-
-	<?php
-	echo '<pre>';
-		if( isset($_GET['error']) ){
-			switch($_GET['error']){
-				case 0: echo 'Zaloguj się do systemu'; break;
-				case 1: echo 'Proszę wypełnic wszystkie pola!'; break;
-				case 2: echo 'Użytkownik nie istnieje!'; break;
-				case 3: echo 'Podane hasło jest nieprawidłowo!'; break;
-			}
-		}
-	echo '</pre>';
-	?>
 	<form id="login">
 		<div id="naglowek">
 			<h1>NonGantt <font color="red">ProjectLibre</font></h1>
@@ -32,20 +19,16 @@
 		<div id="tresc">
 			<h3>Zaloguj się</h3>
 			<p>Wypełnij poniższe pola, by się zalogować do panelu</p>
-			<form action="logowanie.php" method="post"
-				<input type="login" placeholder="Login" autofocus />
-				<input type="haslo" placeholder="Hasło" />
+			<form action="logowanie.php" method="post">
+				<input type="login" placeholder="Login" required>
+				<input type="haslo" placeholder="Hasło" required>
 				<div class="remember">
 					<input name="checky" id="checky" value="1" type="checkbox" />
 					<label class="terms">Zapamiętaj mnie</label>
 				</div>
 				<input type="submit" value="Zaloguj siê" name="log_in"/>
 			</form>
-			</div>
 		</div>
 		<div class="clear"></div>
-		<div id="stopka">&copy; M.J., D.K., A.K., R.Z. 2017</div>
-	</form>
-</div>
 </body>
 </html>
