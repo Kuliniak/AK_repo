@@ -1,0 +1,25 @@
+<!-- Gotowy szablon strony po prostu skopiuj -->
+<?php
+require('header.php');
+require('connect.php');
+?>
+
+<?php
+if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
+	//Co ma być wyświetlone gdy jesteś zalogowany
+	?>
+
+
+
+
+
+<?php
+	} else {
+		//Co ma być wyświetlone gdy dostaniesz się na strone mimo, że nie jesteś zalogowany
+		echo "<h1>PA, HAKIER!</h1>";
+}
+?>
+
+<?php
+require('footer.php');
+?>
