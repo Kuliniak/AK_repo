@@ -4,8 +4,10 @@ body {
 	color: #666;
 	text-align: center;
 	margin: 0;
-	background: #fff url(../images/lg.png) repeat-x top;
+	background: #fff url(../images/lg.jpg) repeat-x top;
 }
+
+
 
 #wrapper {
 	width: 960px;
@@ -43,13 +45,13 @@ a:hover {
 
 #menu {
 	float: right;
-	margin-top: 35px;
+	margin-top: 45px;
 }
 
 #menu ul {
 	list-style: none;
 	margin: 0;
-	padding: 0px 350px 0px 0px;
+	padding: 0px 0px 0px 0px;
 }
 
 #menu li {
@@ -65,7 +67,7 @@ a:hover {
 	font-size: 14px;
 	display: block;
 	float: left;
-	padding: 10px 150px 10px 10px;
+	padding: 10px 10px 10px 10px;
 	text-decoration: none;
 	text-transform: inherit;
 	margin-left: 5px;
@@ -82,7 +84,7 @@ div#menu_lewe
 float: left;
 width: 195px;
 
-margin: 5px 5px 5px 5px;
+margin: 5px 5px 5px 0px;
 padding: 0px;
 
 }
@@ -129,17 +131,16 @@ color: #fff;
 text-decoration: none; 
 }
 
-    
+
 
 #tresc{
-	width: 700px;
-	height: 300px;
-	margin-left: 35px;
+	width: 650px;
+	height: 500px;
+	margin-left: 5px;
 	float: left;
 	background: #99c6cf;
 	border: 3px solid #fff;
-	padding: 0px 0px 50px 0px;
-	
+
 }
 
 #header img {
@@ -181,25 +182,6 @@ text-decoration: none;
     -moz-border-radius: 5px; 
     border-radius: 5px;
 }
-
-.margin1 {
-	margin-left: 15px;
-}
-
-.margin2 {
-	margin-left: 40px;
-}
-
-.margin3 {
-	margin-left: 20px;
-}
-
-h2 {
-	font-size: 22px;
-	font-weight:normal;
-	color: #b10d0d;
-}
-
 
 
 div#stopka
