@@ -9,6 +9,11 @@ require('connect.php');
 	<input type="text" name="login" placeholder="login"> <br><br>
 	<input type="password" name="haslo" placeholder="hasło"> <br><br>
 	<input type="password" name="haslo2" placeholder="powtórz hasło"> <br><br>
+	Uprawnienia administratora: 
+	<select name="admin">
+		<option value="0">Nie</option>
+		<option value="1">Tak</option>
+	</select> <br><br>
 	<input type="submit" name="wyslij" value="Zarejestruj">
 </form>
 

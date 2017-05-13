@@ -43,6 +43,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION["zalogowany"]=true){
 				$_SESSION['login'] = $login;
 				$_SESSION['haslo'] = $haslo;
 				$_SESSION['zalogowany'] = true;
+				$_SESSION['admin'] = $line['admin'];
 				header('Location: zalogowany.php');
 			}
 		}				

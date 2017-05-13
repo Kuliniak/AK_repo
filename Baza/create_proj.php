@@ -5,7 +5,7 @@ require('connect.php');
 ?>
 
 <?php
-if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
+if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true && isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
 	?>
 
 	<h1>Stwórz nowy projekt</h1>
@@ -125,9 +125,14 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 	?>
 
 	<?php
-	} else {
-		header("Location: index.php");
+} else {
+		if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true){
+			header("Location: zalogowany.php");
+		} else {
+			header("Location: index.php");
+		}
 }
+
 ?>
 
 <?php
