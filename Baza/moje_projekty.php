@@ -25,7 +25,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 			echo "</tr>";
 		}
 	}
-	echo "<table>";
+	echo "</table>";
 	?>
 
 

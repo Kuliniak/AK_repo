@@ -1,10 +1,15 @@
 <!-- Po prostu stopka -->
+
+</div>
+<footer>
+	<div id="stopka">
+		<p>Projekt: M.J, D.K, A.K, R.Zi, R.Zy</p>
+	</div>
+</footer>
+
+
 <?php
 	mysqli_close($conn);
 ?>
-
-<footer>
-	<marquee><b>Stopka Stopka Stopka Stopka Stopka</b></marquee>
-</footer>
 </body>
 </html>

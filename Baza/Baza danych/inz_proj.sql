@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 13 Maj 2017, 13:52
+-- Czas generowania: 08 Maj 2017, 17:43
 -- Wersja serwera: 10.1.21-MariaDB
 -- Wersja PHP: 5.6.30
 
@@ -30,17 +30,18 @@ CREATE TABLE `dostepy` (
   `id_dostepu` int(11) NOT NULL,
   `id_osoby` int(11) NOT NULL,
   `id_projektu` int(11) NOT NULL,
-  `rola` text COLLATE utf8_polish_ci NOT NULL
+  `rola` text COLLATE utf8_polish_ci NOT NULL,
+  `admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `dostepy`
 --
 
-INSERT INTO `dostepy` (`id_dostepu`, `id_osoby`, `id_projektu`, `rola`) VALUES
-(2, 1, 6, 'Grafik'),
-(3, 1, 7, 'Sprzedawca'),
-(5, 1, 8, 'programista php');
+INSERT INTO `dostepy` (`id_dostepu`, `id_osoby`, `id_projektu`, `rola`, `admin`) VALUES
+(2, 1, 6, 'Grafik', 0),
+(3, 1, 7, 'Sprzedawca', 0),
+(5, 1, 8, 'programista php', 0);
 
 -- --------------------------------------------------------
 
@@ -51,18 +52,17 @@ INSERT INTO `dostepy` (`id_dostepu`, `id_osoby`, `id_projektu`, `rola`) VALUES
 CREATE TABLE `osoby` (
   `id_osoby` int(11) NOT NULL,
   `login` text COLLATE utf8_polish_ci NOT NULL,
-  `haslo` text COLLATE utf8_polish_ci NOT NULL,
-  `admin` tinyint(1) NOT NULL
+  `haslo` text COLLATE utf8_polish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `osoby`
 --
 
-INSERT INTO `osoby` (`id_osoby`, `login`, `haslo`, `admin`) VALUES
-(1, 'damian', 'qwerty', 1),
-(30, 'liksen', 'asdfghjk', 0),
-(31, 'ziomek', '1234567890', 0);
+INSERT INTO `osoby` (`id_osoby`, `login`, `haslo`) VALUES
+(1, 'damian', 'qwerty'),
+(30, 'liksen', 'asdfghjk'),
+(31, 'ziomek', '1234567890');
 
 -- --------------------------------------------------------
 
@@ -162,7 +162,7 @@ ALTER TABLE `osoby`
 -- AUTO_INCREMENT dla tabeli `projekty`
 --
 ALTER TABLE `projekty`
-  MODIFY `id_projektu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_projektu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT dla tabeli `zadania`
 --

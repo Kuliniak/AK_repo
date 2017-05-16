@@ -6,7 +6,7 @@ require('connect.php');
 
 <?php
 if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
-	echo print_r($_SESSION);
+	//echo print_r($_SESSION);
 	?>
 	<?php
 	echo '<h1>Witaj '.$_SESSION['login'].'<h1>';
