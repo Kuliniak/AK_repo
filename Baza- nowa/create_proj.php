@@ -1,4 +1,4 @@
-﻿<!-- Strona na której tworzy się projekty -->
+<!-- Strona na której tworzy się projekty -->
 <?php
 require('Szablon/header.php');
 require('connect.php');
@@ -54,11 +54,6 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 
 	  	$q_znajdz_zad = "SELECT * FROM projekty WHERE nazwa='$nazwa' LIMIT 1";
 
-	  	if($nazwa==NULL) {
-	  		$ok = false;
-	    	echo '<br><font color="red">Nazwa projektu jest pusta!</font><br>';
-	  	}
-
 	  	if($result = mysqli_query($conn, $q_znajdz_zad)) {
 	    	  $row_cnt = mysqli_num_rows($result);
 	    	  if($row_cnt > 0) {
@@ -66,20 +61,6 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 	    	    echo '<br><font color="red">Nazwa projektu jest już zajęta!</font><br>';
 	    	  }
 	  	}
-
-	  	if($start_proj==NULL || $koniec_proj==NULL) {
-	  		$ok = false;
-	      	echo '<font color="red">Początek i koniec projektu nie może być pusty</font>';
-	  	}
-
-	  	$ile = count($zadanie);
-		for($i = 0; $i < $ile; $i++){
-			if($zadanie[$i]==NULL || $od==NULL || $do==NULL) {
-				$ok = false;
-				echo '<br><font color="red">Nie zostawiaj pustych wierszy</font><br>';
-				break;
-			}
-		}
 
 	  	if($ok == true) {
 	  		$q_znajdz_id = "SELECT MAX(id_projektu) FROM projekty";
