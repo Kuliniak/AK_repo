@@ -66,13 +66,14 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true && isset($_SE
 	  		$ok = false;
 	      	echo '<font color="red">Początek i koniec projektu nie może być pusty</font>';
 	  	}
-	  	$ile = count($zadanie);
-		for($i = 0; $i < $ile; $i++){
-			if($zadanie[$i]==NULL || $od==NULL || $do==NULL) {
-				$ok = false;
-				echo '<br><font color="red">Nie zostawiaj pustych wierszy</font><br>';
-				break;
-			}
+		if(empty($nrola) && $lista_rol == "pusto") {//jesli obje role sa puste
+			echo '<br><font color="red">Nie podałeś żadnej roli!</font><br>';
+			$ok = false;
+		} 
+
+		if(!empty($nrola) && $lista_rol != "pusto") {//jesli obje role sa wypełnione
+			echo '<br><font color="red">Wybierz rolę albo podaj własną!</font><br>';
+			$ok = false;
 		}
 	  	if($ok == true) {
 	  		$q_znajdz_id = "SELECT MAX(id_projektu) FROM projekty";
