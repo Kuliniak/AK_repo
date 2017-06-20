@@ -5,8 +5,8 @@
 	<title>Przykładowa strona</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script languge="javascript" type="text/javascript" src="JavaScript/tabela.js"></script>
 	<script languge="javascript" type="text/javascript" src="JavaScript/jquery.js"></script>
+	<script languge="javascript" type="text/javascript" src="JavaScript/tabela.js"></script>
 	</head>
 <body>
 <div id="wrapper">

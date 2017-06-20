@@ -29,8 +29,8 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 			</tr>
 			<tr id="row0">
 				<td><input type="text" name="sprint[]" placeholder="Sprint"></td>
-				<td><input type="date" name="od[]"></td>
-				<td><input type="date" name="do[]"></td>
+				<td><input class="od" type="date" name="od[]"></td>
+				<td><input class="do" type="date" name="do[]"></td>
 				<td><input type="button" onclick="usun(this);" value="-"></td>
 			</tr>
 		</table>
@@ -158,6 +158,12 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 function startDateChanged(e){
   document.getElementById("endDate").setAttribute("min", e.target.value);
 }
+$(".od").change(function(e){
+	changeSprintDate($(this));
+});
+$(".do").change(function(e){
+	changeSprintDate($(this));
+});
 (function() {
 	
 	

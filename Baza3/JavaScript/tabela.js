@@ -1,6 +1,10 @@
 //Skrypt tworzenia nowych wierszy w tabeli z zadaniami(create_proj.php)
 var row_id = 0;
 
+function changeSprintDate(e){
+	e.parent().next().children().attr("min", e.val());
+}
+
 function dodaj() {
 	row_id++;
 	var tabela = document.getElementById("tablica");
@@ -15,10 +19,12 @@ function dodaj() {
 
 	input_data_start.setAttribute("type", "date");
 	input_data_start.setAttribute("name", "od[]");
+	input_data_start.className = " od";
 	input_data_start.setAttribute("placeholder", "Od (dd-mm-yyyy)");
 
 	input_data_koniec.setAttribute("type", "date");
 	input_data_koniec.setAttribute("name", "do[]");
+	input_data_koniec.className = " do";
 	input_data_koniec.setAttribute("placeholder", "Do (dd-mm-yyyy)");
 
 	input_del.setAttribute("type", "button");
@@ -38,6 +44,16 @@ function dodaj() {
 	cell1.appendChild(input_data_start);
 	cell2.appendChild(input_data_koniec);
 	cell3.appendChild(input_del);
+	
+	var $od = $(input_data_start);
+	var $do = $(input_data_koniec);
+	
+	$($od).change(function(e){
+		changeSprintDate($(this));
+	});
+	$($do).change(function(e){
+		changeSprintDate($(this));
+	});
 }
 
 function usun(index)
