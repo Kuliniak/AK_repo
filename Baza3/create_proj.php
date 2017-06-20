@@ -3,7 +3,7 @@
 require('Szablon/header.php');
 require('connect.php');
 ?>
-
+			
 <?php
 if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 	?>
@@ -16,9 +16,10 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 			Nazwa projektu*
 			<input type="text" name="nazwa" placeholder="nazwa projektu"><br><br>
 			Początek projektu
-			<input type="date" name="start"><br><br>
+			<input id="startDate" type="date" name="start" max="" onchange="startDateChanged(event);"><br><br>
+
 			Koniec projektu
-			<input type="date" name="koniec">
+			<input id="endDate" type="date" name="koniec">
 			<hr>
 			<tr>
 				<td>Sprinty</td>
@@ -153,6 +154,17 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 	header("Location: index.php");
 }
 ?>
+<script>
+function startDateChanged(e){
+  document.getElementById("endDate").setAttribute("min", e.target.value);
+}
+(function() {
+	
+	
+	
+})();	
+</script>
+
 
 <?php
 require('Szablon/footer.php');
