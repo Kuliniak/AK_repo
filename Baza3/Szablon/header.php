@@ -75,31 +75,23 @@
     <div class="main-panel">
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php">Panel</a>
-                </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-dashboard"></i>
-                            </a>
-                        </li>
-                    </ul>
-
+					<?php 
+						if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
+					?>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                            <a href="">
-                               Account
+                               <?php echo $_SESSION['login'];?>
                             </a>
                         </li>
+						<li>
+                           <a href="wyloguj.php">Wyloguj</a>
+                        </li>
                     </ul>
+					<?php 
+						}
+					?>
                 </div>
             </div>
         </nav>
