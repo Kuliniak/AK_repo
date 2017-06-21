@@ -9,51 +9,74 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 	?>
 
 	<h1>Stwórz nowy projekt</h1><br>
-	<b><font style="color: red">Uwaga! Nazwanie projektu i dodanie roli zapewni jego pewny zapis</b></font>
-	<div id="form_div">
-	<form method="post" action="">
-		<table id="tablica" style="width:100%">
-			Nazwa projektu*
-			<input type="text" name="nazwa" placeholder="nazwa projektu"><br><br>
-			Początek projektu
-			<input id="startDate" type="date" name="start" max="" onchange="startDateChanged(event);"><br><br>
-
-			Koniec projektu
-			<input id="endDate" type="date" name="koniec">
-			<hr>
-			<tr>
-				<td>Sprinty</td>
-				<td>Początek sprintu</td>
-				<td>Koniec sprintu</td>
-				<td>Usuń sprint</td>
-			</tr>
-			<tr id="row0">
-				<td><input type="text" name="sprint[]" placeholder="Sprint"></td>
-				<td><input class="od" type="date" name="od[]"></td>
-				<td><input class="do" type="date" name="do[]"></td>
-				<td><input type="button" onclick="usun(this);" value="-"></td>
-			</tr>
-		</table>
+	<div class="alert alert-danger">
+		<strong>Uwaga! Nazwanie projektu i dodanie roli zapewni jego pewny zapis</strong>
+	</div>
+	<div class="row">
+		<form action="" method="POST">
+			<div class="form-group col-md-4 col-md-offset-4">
+				<label>Nazwa projektu</label>
+				<input type="text" class="form-control" name="nazwa" placeholder="nazwa projektu">
+			</div>
+			
+			<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="form-group col-md-6">
+					<label>Początek projektu</label>
+					<input id="startDate" class="form-control" type="date" name="start" max="" onchange="startDateChanged(event);">
+				</div>
+				
+				<div class="form-group col-md-6">
+					<label>Koniec projektu</label>
+					<input id="endDate" class="form-control" type="date" name="koniec" max="" onchange="startDateChanged(event);">
+				</div>
+			</div>	
+			</div>
+			
+			<table id="tablica" style="width:100%">
+				<tr>
+					<td>Sprinty</td>
+					<td>Początek sprintu</td>
+					<td>Koniec sprintu</td>
+					<td>Usuń sprint</td>
+				</tr>
+				<tr id="row0">
+					<td><input type="text" name="sprint[]" placeholder="Sprint"></td>
+					<td><input class="od" type="date" name="od[]"></td>
+					<td><input class="do" type="date" name="do[]"></td>
+					<td><input type="button" onclick="usun(this);" value="-"></td>
+				</tr>
+			</table>
+		
 			<br>
 			<input type="button" onclick="dodaj();" value="Dodaj sprint"><br><br>
 			<hr>
-			Wpisz rolę którą będziesz pełnił w tym projekcie lub wybierz z listy*<br><br>
-			<input type="text" name="nowa_rola" placeholder="Podaj rolę">
-			<select name="dostepne_role">
-			    <?php
-			    $q_dostepne_role = "SELECT rola FROM role GROUP BY rola ORDER BY rola ASC";
-			    if($result = mysqli_query($conn, $q_dostepne_role)) {
-			    	echo '<option value="pusto"></option>';
-			    	while ($line = mysqli_fetch_assoc($result)) {
-			    		echo "<option value= ".$line['rola'].">".$line['rola']."</option>";
-			    	}
-				}
-			    ?>
-			</select><br><br>
-			<textarea name="komentarz" placeholder="Dodaj komentarz (opcjonalny)"></textarea><br>
-			<input type="submit" name="wyslij" value="Stwórz projekt"><br>
-	</form>
+			<div class="alert alert-info">
+				<strong>Wpisz rolę którą będziesz pełnił w tym projekcie lub wybierz z listy*</strong>
+			</div>
+			<div class="form-group col-md-4 col-md-offset-4">
+				<input type="text" class="form-control" name="nowa_rola" placeholder="Podaj rolę">
+			</div>
+			<div class="form-group col-md-4 col-md-offset-4">
+				<select class="form-control" name="dostepne_role">
+					<?php
+					$q_dostepne_role = "SELECT rola FROM role GROUP BY rola ORDER BY rola ASC";
+					if($result = mysqli_query($conn, $q_dostepne_role)) {
+						echo '<option value="pusto"></option>';
+						while ($line = mysqli_fetch_assoc($result)) {
+							echo "<option value= ".$line['rola'].">".$line['rola']."</option>";
+						}
+					}
+					?>
+				</select>
+			</div>	
+			<div class="form-group col-md-4 col-md-offset-4">
+				<textarea class="form-control" name="komentarz" placeholder="Dodaj komentarz (opcjonalny)"></textarea><br>			
+			</div>
+			<button type="submit" name="wyslij" class="btn btn-success btn-fill pull-right">Stwórz nowy projektu</button>
+		</form>
 	</div>
+	
 
 	<?php
 	if(isset($_POST['wyslij'])) {

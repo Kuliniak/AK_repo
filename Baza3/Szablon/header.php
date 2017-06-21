@@ -37,32 +37,32 @@
 			?>
                 <li class="active">
                     <a href="zalogowany.php">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-user"></i>
                         <p>Mój profil</p>
                     </a>
                 </li>
 				<li class="active">
                     <a href="create_proj.php">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-news-paper"></i>
                         <p>Nowy projekt</p>
                     </a>
                 </li>
 				<li class="active">
                     <a href="moje_projekty.php">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-pin"></i>
                         <p>Zarządzanie projektem</p>
                     </a>
                 </li>
 			<?php } else { ?>
 				<li class="active">
                     <a href="logowanie.php">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-switch"></i>
                         <p>Logowanie</p>
                     </a>
                 </li>
 				<li class="active">
                     <a href="rejestracja.php">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-add-user"></i>
                         <p>Rejestracja</p>
                     </a>
                 </li>

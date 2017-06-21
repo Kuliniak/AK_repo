@@ -12,12 +12,6 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 	echo '<h1>Witaj '.$_SESSION['login'].'<h1>';
 	?>
 
-
-	<form method="post">
-		<input type="submit" name="wyloguj" value="wyloguj">
-	</form>
-
-
 	<?php
 	if(isset($_POST["wyloguj"])) {
 		$_SESSION["zalogowany"]=false;
