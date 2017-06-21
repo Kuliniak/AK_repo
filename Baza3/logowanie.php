@@ -19,7 +19,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION["zalogowany"]=true){
 			<div class="form-group">
 				<input type="password" class="form-control" name="haslo" placeholder="hasło">
 			</div>
-			<button type="submit" name="wyslij" class="btn btn-info btn-fill pull-right">Zaloguj</button>
+			<button type="submit" name="wyslij" class="btn btn-success btn-fill pull-right">Zaloguj</button>
 		</form>
 	</div> <br/>
 	
