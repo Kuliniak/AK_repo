@@ -5,34 +5,106 @@
 	<title>Przykładowa strona</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script languge="javascript" type="text/javascript" src="JavaScript/jquery.js"></script>
-	<script languge="javascript" type="text/javascript" src="JavaScript/tabela.js"></script>
-	</head>
+	<!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+	
+</head>
 <body>
-<div id="wrapper">
-	<div id="logo">
-		<img src="images/logo.png" />
-	</div>
-	<div id="menu_lewe">
-		<h3>Panel użytkownika</h3>
-		<ul>
+<?php session_start(); ?>
+<div class="wrapper">
+	
+    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="index.php" class="simple-text">
+                    Project Manager
+                </a>
+            </div>
+			<ul class="nav">
 			<?php 
-			session_start();
-
-			if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
+				if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 			?>
-				<li><a href="zalogowany.php">Mój profil</a></li>
-				<li><a href="create_proj.php">Stwórz nowy projekt</a></li>
-				<li><a href="moje_projekty.php">Moje projekty</a></li>
-				<br>
-			<?php
-			}else {
-				echo '<li><a href="logowanie.php">Logowanie</a></li>';
-				echo '<li><a href="rejestracja.php">Rejestracja</a></li>';
-			}
-			?>
-		</ul>
-	</div>
-</div>
+                <li class="active">
+                    <a href="zalogowany.php">
+                        <i class="pe-7s-graph"></i>
+                        <p>Mój profil</p>
+                    </a>
+                </li>
+				<li class="active">
+                    <a href="create_proj.php">
+                        <i class="pe-7s-graph"></i>
+                        <p>Nowy projekt</p>
+                    </a>
+                </li>
+				<li class="active">
+                    <a href="moje_projekty.php">
+                        <i class="pe-7s-graph"></i>
+                        <p>Zarządzanie projektem</p>
+                    </a>
+                </li>
+			<?php } else { ?>
+				<li class="active">
+                    <a href="logowanie.php">
+                        <i class="pe-7s-graph"></i>
+                        <p>Logowanie</p>
+                    </a>
+                </li>
+				<li class="active">
+                    <a href="rejestracja.php">
+                        <i class="pe-7s-graph"></i>
+                        <p>Rejestracja</p>
+                    </a>
+                </li>
+			<?php } ?>
 
-<div id="tresc">
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php">Panel</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-dashboard"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                           <a href="">
+                               Account
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+
