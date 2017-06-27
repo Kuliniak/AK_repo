@@ -107,7 +107,12 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 	    	  }
 	  	}
 
-	  	if($koniec_proj != NULL) {// jesli koniec projektu jest podany to sprawdzam...
+	  	if($start_proj==NULL) {//jesli data poczatku projektu jest pusta
+	  		$ok = false;
+	      	echo '<br><font color="red">Początek projektu nie może być pusty</font><br>';
+	  	}
+		
+		if($koniec_proj != NULL) {// jesli koniec projektu jest podany to sprawdzam...
 			if($start_proj > $koniec_proj) { //...jesli wystapił błąd z datami start-koniec projektu
 		  		$ok = false;
 		  		echo '<br><font color="red">Błąd w datach</font><br>';
@@ -115,7 +120,26 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany']==true) {
 	  	}
 
 
-	  	if($ok == true) { //jeśli nie zostały znalezione żadne błędy
+	  	$ile = count($sprint);
+		for($i = 0; $i < $ile; $i++) {//jesli nzawa sprintu i jego poczatek są puste
+			if($sprint[$i]==NULL || $od==NULL) {
+				$ok = false;
+				echo '<br><font color="red">Nazwa sprintu i jego początek muszą być podane!</font><br>';
+				break;
+			}
+		}
+
+		if(empty($nrola) && $lista_rol == "pusto") {//jesli obje role sa puste
+			echo '<br><font color="red">Nie podałeś żadnej roli!</font><br>';
+			$ok = false;
+		} 
+
+		if(!empty($nrola) && $lista_rol != "pusto") {//jesli obje role sa wypełnione
+			echo '<br><font color="red">Wybierz rolę albo podaj własną!</font><br>';
+			$ok = false;
+			
+		}
+		if($ok == true) { //jeśli nie zostały znalezione żadne błędy
 	  		$q_znajdz_id = "SELECT MAX(id_projektu) FROM projekty";
 
 			if($result = mysqli_query($conn, $q_znajdz_id)) {
