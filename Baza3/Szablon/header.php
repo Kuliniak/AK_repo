@@ -28,7 +28,7 @@
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="index.php" class="simple-text">
-                    Project Manager
+                    <font size="5">N</font>on<font size="5">G</font>antt<font color="red"><font size="5">P</font>roject<font size="5">L</font>ibre</font>
                 </a>
             </div>
 			<ul class="nav">
